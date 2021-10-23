@@ -17,21 +17,66 @@
   </nav>
 
   <!-- side bar-->
-  <div class="d-flex flex-column flex-shrink-0 p-3 bg-light my-sidebar" style="width: 280px;"> 
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="#" class="nav-link">Dashboard</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">Records</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">Count</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">Logout</a>
-      </li>
-    </ul>
-  </div>    
+  <div>
+    <span className="mobile btn-mobile-menu">
+      <a target="_blank">
+        <i className="fas fa-list btn-mobile-menu__icon"></i>
+      </a>
+    </span>
+  </div>
+  <div class="sidebar-wrapper">
+    <aside class="cover-sidebar">
+      <ul class="sidebar__menu">
+        <li class="sidebar__menu-list dash-margin">
+          <a class="sidebar__menu-list--white" href="#">
+            <div>
+              <div>
+                <span class="icon">
+                  <i class="fas fa-home fa-2x"></i>
+                </span>
+              </div>
+            </div>
+            <div>Dashboard</div>
+          </a>
+        </li>
+        <li class="sidebar__menu-list dash-margin">
+          <a class="sidebar__menu-list--white" href="#">
+            <div>
+              <div>
+                <span class="icon">
+                  <i class="fas fa-book fa-2x"></i>
+                </span>
+              </div>
+            </div>
+            <div>Records</div>
+          </a>
+        </li>
+        <li class="sidebar__menu-list dash-margin">
+          <a class="sidebar__menu-list--white" href="#">
+            <div>
+              <div>
+                <span class="icon">
+                  <i class="fas fa-feather-alt fa-2x"></i>
+                </span>
+              </div>
+            </div>
+            <div>Counts</div>
+          </a>
+        </li>
+        <li class="sidebar__menu-list dash-margin">
+          <a class="sidebar__menu-list--white" href="#">
+            <div>
+              <div>
+                <span class="icon">
+                  <i class="fas fa-sign-out-alt fa-2x"></i>
+                </span>
+              </div>
+            </div>
+            <div>Records</div>
+          </a>
+        </li>
+      </ul>
+    </aside>
+  </div>   
 </body>
 </html>
