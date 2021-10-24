@@ -1,86 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://s3-ap-southeast-2.amazonaws.com/jw.flypenguins.net/favicon.ico">
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <title>Stock Location (Demo)</title>
-    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-</head>
-<body>
-  <!-- heading -->
-  <nav class="navbar navbar__container">
-    <div class="navbar-brand navbar__logo">
-      <span>
-        Stock Location System
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" href="https://s3-ap-southeast-2.amazonaws.com/jw.flypenguins.net/favicon.ico">
+      <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="./assets/css/main.css">
+      <title>Stock Location (Demo)</title>
+      <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+  </head>
+  <body>
+    <!-- heading -->
+    <nav class="navbar navbar__container">
+      <div class="navbar-brand navbar__logo">
+        <span>
+          Stock Location System
+        </span>
+      </div>
+    </nav>
+
+    <!-- side bar-->
+    <div>
+      <span className="mobile btn-mobile-menu">
+        <a target="_blank">
+          <i className="fas fa-list btn-mobile-menu__icon"></i>
+        </a>
       </span>
     </div>
-  </nav>
-
-  <!-- side bar-->
-  <div>
-    <span className="mobile btn-mobile-menu">
-      <a target="_blank">
-        <i className="fas fa-list btn-mobile-menu__icon"></i>
-      </a>
-    </span>
+    <div class="sidebar-wrapper">
+      <aside class="cover-sidebar">
+        <ul class="sidebar__menu">
+          <li class="sidebar__menu-list dash-margin">
+            <a class="sidebar__menu-list--white" href="#">
+              <div>
+                <div>
+                  <span class="icon">
+                    <i class="fas fa-home fa-2x"></i>
+                  </span>
+                </div>
+              </div>
+              <div>Dashboard</div>
+            </a>
+          </li>
+          <li class="sidebar__menu-list dash-margin">
+            <a class="sidebar__menu-list--white" href="#">
+              <div>
+                <div>
+                  <span class="icon">
+                    <i class="fas fa-book fa-2x"></i>
+                  </span>
+                </div>
+              </div>
+              <div>Records</div>
+            </a>
+          </li>
+          <li class="sidebar__menu-list dash-margin">
+            <a class="sidebar__menu-list--white" href="#">
+              <div>
+                <div>
+                  <span class="icon">
+                    <i class="fas fa-feather-alt fa-2x"></i>
+                  </span>
+                </div>
+              </div>
+              <div>Counts</div>
+            </a>
+          </li>
+          <li class="sidebar__menu-list dash-margin">
+            <a class="sidebar__menu-list--white" href="#">
+              <div>
+                <div>
+                  <span class="icon">
+                    <i class="fas fa-sign-out-alt fa-2x"></i>
+                  </span>
+                </div>
+              </div>
+              <div>Logout</div>
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+    
+    <!-- dashboard -->
+    <div>
+    <h1 class="title sl-dashboard__title has-text-grey">
+      Welcome to Stock Location System
+    </h1>
+    <div class="tile is-ancestor">
+      <div class="tile is-6 is-parent">
+        <div class="tile is-child box notification is-info">
+          <p class="title">Stock Location</p>
+          <div class="content">All locations in the warehouse</div>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <div class="tile is-child box notification is-success">
+          <p class="title">Stock Taking</p>
+          <div class="content">One click to get all results</div>
+        </div>
+      </div>
+    </div>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <div class="tile is-child box notification is-primary">
+          <p class="title">VR1600V?</p>
+          <div class="content">import from excel template</div>
+          <div class="content file has-name">
+            <label class="file-label">
+              <input
+                class="file-input"
+                type="file"
+                id="fileImport"
+                onChange={this.handleImport}
+              />
+              <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">Choose a file…</span>
+              </span>
+              <span class="file-name">{this.state.file}</span>
+            </label>
+          </div>
+          <div class="content">
+            <button
+              class="is-primary dashboard-btn" onClick={this.handleProcess}>
+              <svg>
+                <rect className="svg-rect" x="0" y="0" />
+              </svg>
+              Start process
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="sidebar-wrapper">
-    <aside class="cover-sidebar">
-      <ul class="sidebar__menu">
-        <li class="sidebar__menu-list dash-margin">
-          <a class="sidebar__menu-list--white" href="#">
-            <div>
-              <div>
-                <span class="icon">
-                  <i class="fas fa-home fa-2x"></i>
-                </span>
-              </div>
-            </div>
-            <div>Dashboard</div>
-          </a>
-        </li>
-        <li class="sidebar__menu-list dash-margin">
-          <a class="sidebar__menu-list--white" href="#">
-            <div>
-              <div>
-                <span class="icon">
-                  <i class="fas fa-book fa-2x"></i>
-                </span>
-              </div>
-            </div>
-            <div>Records</div>
-          </a>
-        </li>
-        <li class="sidebar__menu-list dash-margin">
-          <a class="sidebar__menu-list--white" href="#">
-            <div>
-              <div>
-                <span class="icon">
-                  <i class="fas fa-feather-alt fa-2x"></i>
-                </span>
-              </div>
-            </div>
-            <div>Counts</div>
-          </a>
-        </li>
-        <li class="sidebar__menu-list dash-margin">
-          <a class="sidebar__menu-list--white" href="#">
-            <div>
-              <div>
-                <span class="icon">
-                  <i class="fas fa-sign-out-alt fa-2x"></i>
-                </span>
-              </div>
-            </div>
-            <div>Logout</div>
-          </a>
-        </li>
-      </ul>
-    </aside>
-  </div>   
-</body>
+  </body>
 </html>
