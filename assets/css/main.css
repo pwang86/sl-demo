@@ -1,3 +1,4 @@
+/* heading */
 .navbar__container{
     border-bottom: 1px solid;
 }
@@ -13,6 +14,7 @@
     }
 }
 
+/* sidebar */
 .btn-mobile-menu{
     display:none;
     position:fixed;
@@ -113,3 +115,44 @@
         color:#0080cc;
     }
 }
+
+/* dashboard */
+.sl-dashboard__title{
+    margin-top: 70px;
+    text-align: center;
+}
+.dashboard-btn{
+  position: relative;
+  border-radius: 0 !important;
+}
+
+.dashboard-btn svg{
+    height: 36px;
+    width: 111px;
+    left: 1;
+    position: absolute;
+    top: -1;
+}
+
+.svg-rect{
+ fill:none;
+ width: 100%;
+ height:100%;
+ stroke: #ffffff;
+ stroke-width: 2;
+ stroke-dasharray: 400, 0;
+ transition: all 0.35s linear;
+}
+.dashboard-btn:hover{
+  /*btn is-info in bulma will set the following colors as default, to make it clear we commit those colors*/
+  background-color: transparent !important;
+  border-color: transparent !important;
+  font-weight: 600;
+}
+.dashboard-btn:hover .svg-rect{
+  stroke-width: 3;
+  stroke-dasharray: 15, 310;
+  /*when dashoffset is 30, line will go anti-clockwise*/
+  stroke-dashoffset: -300;
+  transition: all 1.35s cubic-bezier(0, 0, 0.5, 1);; 
+} 
