@@ -85,57 +85,89 @@
     
     <!-- dashboard -->
     <div>
-    <h1 class="title sl-dashboard__title has-text-grey">
-      Welcome to Stock Location System
-    </h1>
-    <div class="tile is-ancestor">
-      <div class="tile is-6 is-parent">
-        <div class="tile is-child box notification is-info">
-          <p class="title">Stock Location</p>
-          <div class="content">All locations in the warehouse</div>
+      <h1 class="title sl-dashboard__title has-text-grey">
+        Welcome to Stock Location System
+      </h1>
+      <div class="tile is-ancestor">
+        <div class="tile is-6 is-parent">
+          <div class="tile is-child box notification is-info">
+            <p class="title">Stock Location</p>
+            <div class="content">All locations in the warehouse</div>
+          </div>
+        </div>
+        <div class="tile is-parent">
+          <div class="tile is-child box notification is-success">
+            <p class="title">Stock Taking</p>
+            <div class="content">One click to get all results</div>
+          </div>
         </div>
       </div>
-      <div class="tile is-parent">
-        <div class="tile is-child box notification is-success">
-          <p class="title">Stock Taking</p>
-          <div class="content">One click to get all results</div>
-        </div>
-      </div>
-    </div>
-    <div class="tile is-ancestor">
-      <div class="tile is-parent">
-        <div class="tile is-child box notification is-primary">
-          <p class="title">VR1600V?</p>
-          <div class="content">import from excel template</div>
-          <div class="content file has-name">
-            <label class="file-label">
-              <input
-                class="file-input"
-                type="file"
-                id="fileImport"
-                onChange={this.handleImport}
-              />
-              <span class="file-cta">
-                <span class="file-icon">
-                  <i class="fas fa-upload"></i>
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <div class="tile is-child box notification is-primary">
+            <p class="title">VR1600V?</p>
+            <div class="content">import from excel template</div>
+            <div class="content file has-name">
+              <label class="file-label">
+                <input
+                  class="file-input"
+                  type="file"
+                  id="fileImport"
+                  onChange={this.handleImport}
+                />
+                <span class="file-cta">
+                  <span class="file-icon">
+                    <i class="fas fa-upload"></i>
+                  </span>
+                  <span class="file-label">Choose a file…</span>
                 </span>
-                <span class="file-label">Choose a file…</span>
-              </span>
-              <span class="file-name">{this.state.file}</span>
-            </label>
-          </div>
-          <div class="content">
-            <button
-              class="is-primary dashboard-btn" onClick={this.handleProcess}>
-              <svg>
-                <rect className="svg-rect" x="0" y="0" />
-              </svg>
-              Start process
-            </button>
+                <span class="file-name">{this.state.file}</span>
+              </label>
+            </div>
+            <div class="content">
+              <button
+                class="is-primary dashboard-btn" onClick={this.handleProcess}>
+                <svg>
+                  <rect class="svg-rect" x="0" y="0" />
+                </svg>
+                Start process
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+
+    <!-- records  -->
+    <div>
+      <h1 class="title sl-record__title has-text-grey">Records</h1>
+        <div class="new-and-search clearfix">
+          <div class="to-left">
+            <Link
+            class="button is-link newRecord_button"
+              to="/record/createrecord"
+            >
+              New Record
+            </Link>
+          </div>
+          <form
+            onSubmit={this.handleSubmit}
+            class="field has-addons to-right"
+          >
+            <div class="control">
+              <TextField
+                name="searchValue"
+                placeholder="Search Model/Location"
+                value={this.state.searchValue}
+                onChange={this.handleFieldChange}
+              />
+            </div>
+            <div class="control">
+              <input type="submit" value="Search" class="button is-link" />
+            </div>
+          </form>
+        </div>
+    </div>
+    
   </body>
 </html>
