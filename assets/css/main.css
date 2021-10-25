@@ -202,3 +202,13 @@
     font-size: 0.8rem !important;
 }
 }
+
+/* counts */
+.sl-count__title{
+    margin-top: 70px;
+    text-align: center;
+}
+
+.table-style{
+    width: 100%;
+}
