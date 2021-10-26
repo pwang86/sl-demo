@@ -83,109 +83,111 @@
       </aside>
     </div>
     
-    <!-- dashboard -->
-    <div>
-      <h1 class="title sl-dashboard__title has-text-grey">
-        Welcome to Stock Location System
-      </h1>
-
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="card text-white bg-info">
-            <div class="card-body">
-              <h5 class="card-title">Stock Location</h5>
-              <p class="card-text">All locations in the warehouse</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card text-white bg-success">
-            <div class="card-body">
-              <h5 class="card-title">Stock Taking</h5>
-              <p class="card-text">One click to get all results</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div>
-          <div class="card text-white bg-warning">
-            <div class="card-body">
-              <h5 class="card-title">VR1600V?</h5>
-              <p class="card-text">import from excel template</p>
-              <div class="content file has-name">
-                <label class="file-label">
-                  <input
-                    class="file-input"
-                    type="file"
-                    id="fileImport"
-                    onChange={this.handleImport}
-                  />
-                  <span class="file-cta">
-                    <span class="file-icon">
-                      <i class="fas fa-upload"></i>
-                    </span>
-                    <span class="file-label">Choose a file…</span>
-                  </span>
-                  <span class="file-name">{this.state.file}</span>
-                </label>
-              </div>
-              <div class="content">
-                <button
-                  class="is-primary dashboard-btn" onClick={this.handleProcess}>
-                  <svg>
-                    <rect class="svg-rect" x="0" y="0" />
-                  </svg>
-                  Start process
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- records  -->
-    <div>
-      <h1 class="title sl-record__title has-text-grey">Records</h1>
-        <div class="new-and-search clearfix">
-          <div class="to-left">
-            <Link
-            class="button is-link newRecord_button"
-              to="/record/createrecord"
-            >
-              New Record
-            </Link>
-          </div>
-          <form
-            onSubmit={this.handleSubmit}
-            class="field has-addons to-right"
-          >
-            <div class="control">
-              <TextField
-                name="searchValue"
-                placeholder="Search Model/Location"
-                value={this.state.searchValue}
-                onChange={this.handleFieldChange}
-              />
-            </div>
-            <div class="control">
-              <input type="submit" value="Search" class="button is-link" />
-            </div>
-          </form>
-        </div>
-    </div>
-    
-    <!-- counts -->
-    <div>
-      <h1 className="title has-text-grey sl-count__title">
-        Stock Taking Results
-      </h1>
+    <div class="sl-main-content">
+      <!-- dashboard -->
       <div>
-        <table className="table table-style">
-          {this.renderHead()}
-          {this.renderBody()}
-        </table>
+        <h1 class="title sl-dashboard__title has-text-grey">
+          Welcome to Stock Location System
+        </h1>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card text-white bg-info">
+              <div class="card-body">
+                <h5 class="card-title">Stock Location</h5>
+                <p class="card-text">All locations in the warehouse</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card text-white bg-success">
+              <div class="card-body">
+                <h5 class="card-title">Stock Taking</h5>
+                <p class="card-text">One click to get all results</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="card text-white bg-warning">
+              <div class="card-body">
+                <h5 class="card-title">VR1600V?</h5>
+                <p class="card-text">import from excel template</p>
+                <div class="content file has-name">
+                  <label class="file-label">
+                    <input
+                      class="file-input"
+                      type="file"
+                      id="fileImport"
+                      onChange={this.handleImport}
+                    />
+                    <span class="file-cta">
+                      <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                      </span>
+                      <span class="file-label">Choose a file…</span>
+                    </span>
+                    <span class="file-name">{this.state.file}</span>
+                  </label>
+                </div>
+                <div class="content">
+                  <button
+                    class="is-primary dashboard-btn" onClick={this.handleProcess}>
+                    <svg>
+                      <rect class="svg-rect" x="0" y="0" />
+                    </svg>
+                    Start process
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- records  -->
+      <div>
+        <h1 class="title sl-record__title has-text-grey">Records</h1>
+          <div class="new-and-search clearfix">
+            <div class="to-left">
+              <Link
+              class="button is-link newRecord_button"
+                to="/record/createrecord"
+              >
+                New Record
+              </Link>
+            </div>
+            <form
+              onSubmit={this.handleSubmit}
+              class="field has-addons to-right"
+            >
+              <div class="control">
+                <TextField
+                  name="searchValue"
+                  placeholder="Search Model/Location"
+                  value={this.state.searchValue}
+                  onChange={this.handleFieldChange}
+                />
+              </div>
+              <div class="control">
+                <input type="submit" value="Search" class="button is-link" />
+              </div>
+            </form>
+          </div>
+      </div>
+      
+      <!-- counts -->
+      <div>
+        <h1 className="title has-text-grey sl-count__title">
+          Stock Taking Results
+        </h1>
+        <div>
+          <table className="table table-style">
+            {this.renderHead()}
+            {this.renderBody()}
+          </table>
+        </div>
       </div>
     </div>
   </body>
