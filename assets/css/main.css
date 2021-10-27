@@ -70,7 +70,7 @@
         display: block;
      }
     
-    .sidenav-wrapper{
+    .sidebar-wrapper{
         display:none;
         position: fixed;
         top: 0;
@@ -81,37 +81,37 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         padding: 20px 0;
     }
-    .sidenav-wrapper.visible{
+    .sidebar-wrapper.visible{
         display: block;
         height:70px;
         z-index:800;
     }
-    .cover-sidenav{
+    .cover-sidebar{
         display:block;
         position: relative;
         float:left;
         clear: left;
         width:100%;
     }
-    .sidenav__menu{
+    .sidebar__menu{
         display: block;
         width:100%;
     }
-    .sidenav__menu li{
+    .sidebar__menu li{
         display: inline-block;
         width: 15%; 
     }
-    .sidenav__menu span{
+    .sidebar__menu span{
         display: none;
     }
     
     .dash-margin{
         margin-right: 14px;
     }
-    .sidenav__menu-list--white{
+    .sidebar__menu-list--white{
         color:white;
     }
-    .sidenav__menu-list--white:hover{
+    .sidebar__menu-list--white:hover{
         color:#0080cc;
     }
 }
