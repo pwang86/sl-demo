@@ -81,8 +81,8 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         padding: 20px 0;
     }
-    .sidebar-wrapper.visible{
-        display: block;
+    #mySidebar{
+        display: none;
         height:70px;
         z-index:800;
     }
