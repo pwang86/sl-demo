@@ -1,9 +1,10 @@
+var isBurgerMenuClicked = false;
 const clickMobileBurgerMenu = () => {
-    const myMenu = document.getElementById('mySidebar');
-    const mydisplay = myMenu.style.display;
-    if (mydisplay === 'block') {
-        myMenu.style.display = 'none';
+    const myMenu = document.getElementsByClassName("sidebar-wrapper")[0];
+    isBurgerMenuClicked = !isBurgerMenuClicked;
+    if (isBurgerMenuClicked) {
+        myMenu.classList.add("visible")
     } else {
-        myMenu.style.display = 'block';
+        myMenu.classList.remove("visible")
     }
 };
