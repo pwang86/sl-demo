@@ -115,13 +115,12 @@
                 <div class="card-body">
                   <h5 class="card-title">VR1600V?</h5>
                   <p class="card-text">import from excel template</p>
-                  <div class="content file has-name">
+                  <div class="content file has-name mb-3">
                     <label class="file-label">
                       <input
                         class="file-input"
                         type="file"
                         id="fileImport"
-                        onChange={this.handleImport}
                       />
                       <span class="file-cta">
                         <span class="file-icon">
@@ -129,14 +128,14 @@
                         </span>
                         <span class="file-label">Choose a file…</span>
                       </span>
-                      <span class="file-name">{this.state.file}</span>
+                      <span class="file-name"></span>
                     </label>
                   </div>
                   <div class="content">
                     <button type="button"
                       class="btn btn-success dashboard-btn">
                       <svg>
-                        <rect class="svg-rect" x="0" y="0" />
+                        <rect class="svg-rect" />
                       </svg>
                       Start process
                     </button>
