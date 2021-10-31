@@ -138,11 +138,11 @@
 }
 
 .dashboard-btn svg{
-    height: 36px;
-    width: 111px;
-    left: 1;
+    height: 38px;
+    width: 123px;
+    left: 0;
     position: absolute;
-    top: -1;
+    top: 0;
 }
 
 .svg-rect{
@@ -162,9 +162,9 @@
 }
 .dashboard-btn:hover .svg-rect{
   stroke-width: 3;
-  stroke-dasharray: 15, 310;
+  stroke-dasharray: 15, 330;
   /*when dashoffset is 30, line will go anti-clockwise*/
-  stroke-dashoffset: -300;
+  stroke-dashoffset: -330;
   transition: all 1.35s cubic-bezier(0, 0, 0.5, 1);; 
 } 
 
