@@ -51,7 +51,7 @@
     margin:0;
     padding:0;
     list-style:none;
-
+    display: inline!important;
 }
 .sidebar__menu-list{
     padding:0.25rem 0;
