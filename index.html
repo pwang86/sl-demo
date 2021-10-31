@@ -30,9 +30,9 @@
     </div>
     <div class="sidebar-wrapper">
       <aside class="cover-sidebar">
-        <ul class="sidebar__menu">
+        <ul class="sidebar__menu nav">
           <li class="sidebar__menu-list dash-margin">
-            <a class="sidebar__menu-list--white" id="dashboard-menu" data-bs-toggle="pill" href="#dashboard" aria-controls="dashboard">
+            <a class="sidebar__menu-list--white" id="dashboard-menu" role="tab" data-bs-toggle="pill" data-bs-target="#dashboard" href="#dashboard" aria-controls="dashboard">
               <div>
                 <div>
                   <span class="icon">
@@ -44,7 +44,7 @@
             </a>
           </li>
           <li class="sidebar__menu-list dash-margin">
-            <a class="sidebar__menu-list--white" id="record-menu" data-bs-toggle="pill" href="#record" aria-controls="record">
+            <a class="sidebar__menu-list--white" id="record-menu" role="tab" data-bs-toggle="pill" data-bs-target="#record" href="#record" aria-controls="record">
               <div>
                 <div>
                   <span class="icon">
@@ -56,7 +56,7 @@
             </a>
           </li>
           <li class="sidebar__menu-list dash-margin">
-            <a class="sidebar__menu-list--white" id="count-menu" data-bs-toggle="pill" href="#count" aria-controls="count">
+            <a class="sidebar__menu-list--white" id="count-menu" role="tab" data-bs-toggle="pill" data-bs-target="#count" href="#count" aria-controls="count">
               <div>
                 <div>
                   <span class="icon">
@@ -83,10 +83,10 @@
       </aside>
     </div>
     
-    <div class="sl-main-content">
-      <div class="tab-content">
+    <div class="sl-main-content tab-content">
+      <div class="">
         <!-- dashboard -->
-        <div class="tab-pane active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-menu">
+        <div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-menu">
           <h1 class="title sl-dashboard__title">
             Welcome to Stock Location System
           </h1>
@@ -148,7 +148,7 @@
         </div>
       
         <!-- records  -->
-        <div class="tab-pane" id="record" role="tabpanel" aria-labelledby="record-menu">
+        <div class="tab-pane fade" id="record" role="tabpanel" aria-labelledby="record-menu">
           <h1 class="title sl-record__title has-text-grey">Records</h1>
           <div class="new-and-search clearfix">
             <div class="to-left">
@@ -179,7 +179,7 @@
         </div>
       
         <!-- counts -->
-        <div class="tab-pane" id="count" role="tabpanel" aria-labelledby="count-menu">
+        <div class="tab-pane fade" id="count" role="tabpanel" aria-labelledby="count-menu">
           <h1 className="title has-text-grey sl-count__title">
             Stock Taking Results
           </h1>
