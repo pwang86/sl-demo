@@ -28,11 +28,11 @@
         </a>
       </span>
     </div>
-    <div id="mySidebar" class="sidebar-wrapper">
+    <div class="sidebar-wrapper">
       <aside class="cover-sidebar">
         <ul class="sidebar__menu">
           <li class="sidebar__menu-list dash-margin">
-            <a class="sidebar__menu-list--white" href="#">
+            <a class="sidebar__menu-list--white" id="dashboard-menu" data-bs-toggle="pill" href="#dashboard" aria-controls="dashboard">
               <div>
                 <div>
                   <span class="icon">
@@ -44,7 +44,7 @@
             </a>
           </li>
           <li class="sidebar__menu-list dash-margin">
-            <a class="sidebar__menu-list--white" href="#">
+            <a class="sidebar__menu-list--white" id="record-menu" data-bs-toggle="pill" href="#record" aria-controls="record">
               <div>
                 <div>
                   <span class="icon">
@@ -56,7 +56,7 @@
             </a>
           </li>
           <li class="sidebar__menu-list dash-margin">
-            <a class="sidebar__menu-list--white" href="#">
+            <a class="sidebar__menu-list--white" id="count-menu" data-bs-toggle="pill" href="#count" aria-controls="count">
               <div>
                 <div>
                   <span class="icon">
@@ -84,71 +84,72 @@
     </div>
     
     <div class="sl-main-content">
-      <!-- dashboard -->
-      <div>
-        <h1 class="title sl-dashboard__title has-text-grey">
-          Welcome to Stock Location System
-        </h1>
+      <div class="tab-content">
+        <!-- dashboard -->
+        <div class="tab-pane active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-menu">
+          <h1 class="title sl-dashboard__title">
+            Welcome to Stock Location System
+          </h1>
 
-        <div class="row mb-3">
-          <div class="col-sm-6">
-            <div class="card text-white bg-info mb-3">
-              <div class="card-body">
-                <h5 class="card-title">Stock Location</h5>
-                <p class="card-text">All locations in the warehouse</p>
+          <div class="row mb-3">
+            <div class="col-sm-6">
+              <div class="card text-white bg-info mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Stock Location</h5>
+                  <p class="card-text">All locations in the warehouse</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card text-white bg-warning">
+                <div class="card-body">
+                  <h5 class="card-title">Stock Taking</h5>
+                  <p class="card-text">One click to get all results</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card text-white bg-warning">
-              <div class="card-body">
-                <h5 class="card-title">Stock Taking</h5>
-                <p class="card-text">One click to get all results</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div>
-            <div class="card text-white bg-success">
-              <div class="card-body">
-                <h5 class="card-title">VR1600V?</h5>
-                <p class="card-text">import from excel template</p>
-                <div class="content file has-name">
-                  <label class="file-label">
-                    <input
-                      class="file-input"
-                      type="file"
-                      id="fileImport"
-                      onChange={this.handleImport}
-                    />
-                    <span class="file-cta">
-                      <span class="file-icon">
-                        <i class="fas fa-upload"></i>
+          <div class="row">
+            <div>
+              <div class="card text-white bg-success">
+                <div class="card-body">
+                  <h5 class="card-title">VR1600V?</h5>
+                  <p class="card-text">import from excel template</p>
+                  <div class="content file has-name">
+                    <label class="file-label">
+                      <input
+                        class="file-input"
+                        type="file"
+                        id="fileImport"
+                        onChange={this.handleImport}
+                      />
+                      <span class="file-cta">
+                        <span class="file-icon">
+                          <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">Choose a file…</span>
                       </span>
-                      <span class="file-label">Choose a file…</span>
-                    </span>
-                    <span class="file-name">{this.state.file}</span>
-                  </label>
-                </div>
-                <div class="content">
-                  <button
-                    class="is-primary dashboard-btn" onClick={this.handleProcess}>
-                    <svg>
-                      <rect class="svg-rect" x="0" y="0" />
-                    </svg>
-                    Start process
-                  </button>
+                      <span class="file-name">{this.state.file}</span>
+                    </label>
+                  </div>
+                  <div class="content">
+                    <button type="button"
+                      class="btn btn-success dashboard-btn">
+                      <svg>
+                        <rect class="svg-rect" x="0" y="0" />
+                      </svg>
+                      Start process
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- records  -->
-      <div>
-        <h1 class="title sl-record__title has-text-grey">Records</h1>
+      
+        <!-- records  -->
+        <div class="tab-pane" id="record" role="tabpanel" aria-labelledby="record-menu">
+          <h1 class="title sl-record__title has-text-grey">Records</h1>
           <div class="new-and-search clearfix">
             <div class="to-left">
               <Link
@@ -175,18 +176,19 @@
               </div>
             </form>
           </div>
-      </div>
+        </div>
       
-      <!-- counts -->
-      <div>
-        <h1 className="title has-text-grey sl-count__title">
-          Stock Taking Results
-        </h1>
-        <div>
-          <table className="table table-style">
-            {this.renderHead()}
-            {this.renderBody()}
-          </table>
+        <!-- counts -->
+        <div class="tab-pane" id="count" role="tabpanel" aria-labelledby="count-menu">
+          <h1 className="title has-text-grey sl-count__title">
+            Stock Taking Results
+          </h1>
+          <div>
+            <table className="table table-style">
+              {this.renderHead()}
+              {this.renderBody()}
+            </table>
+          </div>
         </div>
       </div>
     </div>
