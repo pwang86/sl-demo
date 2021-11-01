@@ -144,28 +144,16 @@
         <!-- records  -->
         <div class="tab-pane fade" id="record" role="tabpanel" aria-labelledby="record-menu">
           <h1 class="title sl-record__title has-text-grey">Records</h1>
-          <div class="new-and-search clearfix">
-            <div class="to-left">
+          <div class="clearfix">
+            <div class="float-start">
               <a class="btn btn-primary newRecord_button" href="#" role="button">
                 New Record
               </a>
             </div>
-            <form
-              onSubmit={this.handleSubmit}
-              class="field has-addons to-right"
-            >
-              <div class="control">
-                <TextField
-                  name="searchValue"
-                  placeholder="Search Model/Location"
-                  value={this.state.searchValue}
-                  onChange={this.handleFieldChange}
-                />
-              </div>
-              <div class="control">
-                <input type="submit" value="Search" class="button is-link" />
-              </div>
-            </form>
+            <div class="float-end">
+              <input type="text" placeholder="Search Model/Location" />
+              <button class="btn btn-primary">Search</button>
+            </div>
           </div>
         </div>
       
