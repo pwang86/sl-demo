@@ -190,12 +190,6 @@
     clear: both;
     display: table;
 }
-.to-left{
-    float: left;
-}
-.to-right{
-    float:right;
-}
 
   @media all and (max-width:960px){
 
