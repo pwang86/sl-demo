@@ -49,3 +49,8 @@ let jsonRecord = `[
 ]`;
 const record = JSON.parse(jsonRecord);
 console.log(record);
+
+function displayList() {
+    const container = document.getElementById("recordList");
+    displayRecord(container, record);
+}
