@@ -9,8 +9,9 @@ const clickMobileBurgerMenu = () => {
     }
 };
     
-const record = JSON.parse(record);
-console.log(record);
+fetch('https://github.com/pwang86/sl-demo/blob/master/assets/record.json')
+  .then(response => response.json())
+  .then(data => console.log(data));
 
 function displayList() {
     const container = document.getElementById("recordList");
