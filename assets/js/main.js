@@ -8,9 +8,7 @@ const clickMobileBurgerMenu = () => {
         myMenu.classList.remove("visible")
     }
 };
-    
-const record = JSON.parse(record);
-console.log(record);
+
 
 function displayList() {
     const container = document.getElementById("recordList");
