@@ -8,14 +8,26 @@ const clickMobileBurgerMenu = () => {
         myMenu.classList.remove("visible")
     }
 };
-<<<<<<< HEAD
-
-=======
     
-fetch('https://github.com/pwang86/sl-demo/blob/master/assets/record.json')
+const myInit = { 
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    mode: 'cors',
+    cache: 'default',
+    credentials: 'omit'
+};
+let myRequest = new Request("https://github.com/pwang86/sl-demo/blob/master/assets/record.json", myInit);
+
+fetch(myRequest)
   .then(response => response.json())
-  .then(data => console.log(data));
->>>>>>> 5da2b6bba88c3f880a3578ab15df038f983d41a5
+  .then(data => {
+      console.log(data);
+  })
+  .catch(error => {
+      console.error('Error:', error);
+  });
 
 function displayList() {
     const container = document.getElementById("recordList");
