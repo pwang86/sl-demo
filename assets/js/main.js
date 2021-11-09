@@ -12,7 +12,7 @@ const clickMobileBurgerMenu = () => {
 const myInit = { 
     method: 'GET',
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'text/plain'
     },
     mode: 'cors',
     cache: 'default',
