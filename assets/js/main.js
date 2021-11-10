@@ -8,7 +8,7 @@ const clickMobileBurgerMenu = () => {
         myMenu.classList.remove("visible")
     }
 };
-    
+/*    
 const myInit = { 
     method: 'GET',
     headers: {
@@ -28,6 +28,16 @@ fetch(myRequest)
   .catch(error => {
       console.error('Error:', error);
   });
+*/
+let requestURL = 'https://github.com/pwang86/sl-demo/blob/master/assets/record.json';
+let request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+request.onload = function() {
+    const record= request.response;
+    console.log(record);
+}
 
 function displayList() {
     const container = document.getElementById("recordList");
