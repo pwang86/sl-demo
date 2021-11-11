@@ -71,9 +71,41 @@ const jsonRecord = `
     ]
 }`;
 const record = JSON.parse(jsonRecord);
-console.log(record);
 
-function displayList() {
+function displayRecordList() {
     const container = document.getElementById("recordList");
-    displayRecord(container, record);
+    record.map(item => {
+        const trTag = document.createElement("tr");
+
+        const tdModel = document.createElement("td");
+        tdModel.innerHTML = item.model;
+
+        const tdLocation = document.createElement("td");
+        tdLocation.innerHTML = item.location;
+
+        const tdVersion = document.createElement("td");
+        tdVersion.innerHTML = item.version;
+
+        const tdDate = document.createElement("td");
+        tdDate.innerHTML = item.date;
+
+        const tdQuantity = document.createElement("td");
+        tdQuantity.innerHTML = item.quantity;
+
+        const tdDetail = document.createElement("td");
+        const aTag = document.createElement("a");
+        aTag.innerHTML = "Detail";
+        tdDetail.appendChild(aTag);
+
+        trTag.appendChild(tdModel);
+        trTag.appendChild(tdLocation);
+        trTag.appendChild(tdVersion);
+        trTag.appendChild(tdDate);
+        trTag.appendChild(tdQuantity);
+        trTag.appendChild(tdDetail);
+    });
 }
+
+window.onload = function() {
+    displayRecordList();
+};
