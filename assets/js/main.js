@@ -37,8 +37,6 @@ const jsonRecord = `
             "location": "A0C1",
             "version": "14.0",
             "date": "2021-11-11",
-            "isTPG": "false",
-            "isNZ": "false",
             "quantity": "100"
         },
         {
@@ -46,8 +44,6 @@ const jsonRecord = `
             "location": "A0C2",
             "version": "6.0",
             "date": "2021-11-11",
-            "isTPG": "false",
-            "isNZ": "false",
             "quantity": "120"
         },
         {
@@ -55,8 +51,6 @@ const jsonRecord = `
             "location": "A0D1",
             "version": "6.0",
             "date": "2021-11-11",
-            "isTPG": "false",
-            "isNZ": "false",
             "quantity": "120"
         },
         {
@@ -64,17 +58,43 @@ const jsonRecord = `
             "location": "A0D2",
             "version": "3.20",
             "date": "2021-11-11",
-            "isTPG": "false",
-            "isNZ": "false",
             "quantity": "180"
+        },
+        {
+            "model": "VR1600V",
+            "location": "A1C1",
+            "version": "2.0",
+            "date": "2021-11-12",
+            "quantity": "384"
+        },
+        {
+            "model": "Tapo C200",
+            "location": "A1C2",
+            "version": "1.0",
+            "date": "2021-11-12",
+            "quantity": "240"
+        },
+        {
+            "model": "M4 (2P)",
+            "location": "A1D1",
+            "version": "3.0",
+            "date": "2021-11-12",
+            "quantity": "180"
+        },
+        {
+            "model": "UB400",
+            "location": "A1D2",
+            "version": "1.0",
+            "date": "2021-11-12",
+            "quantity": "800"
         }
     ]
 }`;
-const record = JSON.parse(jsonRecord);
+const recordObj = JSON.parse(jsonRecord);
 
 function displayRecordList() {
     const container = document.getElementById("recordList");
-    record.map(item => {
+    recordObj.record.map(item => {
         const trTag = document.createElement("tr");
 
         const tdModel = document.createElement("td");
@@ -103,6 +123,8 @@ function displayRecordList() {
         trTag.appendChild(tdDate);
         trTag.appendChild(tdQuantity);
         trTag.appendChild(tdDetail);
+
+        container.appendChild(trTag);
     });
 }
 
