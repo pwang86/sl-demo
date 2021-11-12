@@ -189,13 +189,19 @@
       
         <!-- counts -->
         <div class="tab-pane fade" id="count" role="tabpanel" aria-labelledby="count-menu">
-          <h1 className="title has-text-grey sl-count__title">
+          <h1 class="title has-text-grey sl-count__title">
             Stock Taking Results
           </h1>
           <div>
-            <table className="table table-style">
-              {this.renderHead()}
-              {this.renderBody()}
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Quantity</th>
+                </tr>
+              </thead>
+              <tbody id="stocktakingList">
+              </tbody>
             </table>
           </div>
         </div>
