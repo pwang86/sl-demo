@@ -56,7 +56,7 @@ const jsonRecord = `
         {
             "model": "VR300",
             "location": "A0D2",
-            "version": "3.20",
+            "version": "3.2",
             "date": "2021-11-11",
             "quantity": "180"
         },
@@ -68,25 +68,39 @@ const jsonRecord = `
             "quantity": "384"
         },
         {
-            "model": "Tapo C200",
+            "model": "WR841N",
             "location": "A1C2",
-            "version": "1.0",
+            "version": "14.0",
             "date": "2021-11-12",
             "quantity": "240"
         },
         {
-            "model": "M4 (2P)",
+            "model": "M5 (2P)",
             "location": "A1D1",
-            "version": "3.0",
+            "version": "6.0",
             "date": "2021-11-12",
-            "quantity": "180"
+            "quantity": "240"
         },
         {
-            "model": "UB400",
+            "model": "VR1600V",
             "location": "A1D2",
-            "version": "1.0",
+            "version": "2.0",
             "date": "2021-11-12",
-            "quantity": "800"
+            "quantity": "384"
+        },
+        {
+            "model": "VR300",
+            "location": "A2C1",
+            "version": "3.2",
+            "date": "2021-11-12",
+            "quantity": "240"
+        },
+        {
+            "model": "WA850RE",
+            "location": "A2C2",
+            "version": "6.0",
+            "date": "2021-11-12",
+            "quantity": "100"
         }
     ]
 }`;
@@ -128,6 +142,26 @@ function displayRecordList() {
     });
 }
 
+function displayStockTaking() {
+    const myMap = recordObj.record.reduce((acc, {model, quantity}) => acc.set(model, (acc.get(model) || 0) + parseInt(quantity)), new Map());
+    const container = document.getElementById("stocktakingList");
+    Array.from(myMap).map(([key,value]) => {
+        const trTag = document.createElement("tr");
+
+        const tdModel = document.createElement("td");
+        tdModel.innerHTML = key;
+
+        const tdQuantity = document.createElement("td");
+        tdQuantity.innerHTML = value;
+
+        trTag.appendChild(tdModel);
+        trTag.appendChild(tdQuantity);
+
+        container.appendChild(trTag);
+    });
+}
+
 window.onload = function() {
     displayRecordList();
+    displayStockTaking();
 };
