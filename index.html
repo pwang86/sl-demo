@@ -150,9 +150,52 @@
               </a>
               <!-- New Record Modal-->
               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-dialog" role="document">
                   <div class="modal-content">
-                    ...
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">New record</h5>
+                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group">
+                          <label for="modalName" class="col-form-label">
+                            Model, e.g. VR1600V (FTTN), DECO M5 (2P)
+                          </label>
+                          <input type="text" class="form-control" id="modalName" placeholder="Model">
+                        </div>
+                        <div class="form-group">
+                          <label for="modalLocation" class="col-form-label">
+                            Location
+                          </label>
+                          <input type="text" class="form-control" id="modalLocation" placeholder="Location">
+                        </div>
+                        <div class="form-group">
+                          <label for="modalVersion" class="col-form-label">
+                            Version
+                          </label>
+                          <input type="text" class="form-control" id="modalVersion" placeholder="Version">
+                        </div>
+                        <div class="form-group">
+                          <label for="modalDate" class="col-form-label">
+                            Date(YYYY-MM-DD)
+                          </label>
+                          <input type="text" class="form-control" id="modalDate" placeholder="Date">
+                        </div>
+                        <div class="form-group">
+                          <label for="modalQty" class="col-form-label">
+                            Quantity
+                          </label>
+                          <input type="text" class="form-control" id="modalQty" placeholder="Quantity">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary">Create</button>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Cancel</button>
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
