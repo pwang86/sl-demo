@@ -184,12 +184,16 @@
     clear: both;
     display: table;
 }
-@media all and (max-width: 375px){
+@media all and (max-width: 425px){
     .newRecord_button{
         font-size: 0.8rem !important;
     }
     .input{
         font-size: 0.8rem !important;
+    }
+    #record_group {
+        flex: 1 0 0%;
+        max-width: 50%;
     }
 }
 
