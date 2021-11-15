@@ -104,7 +104,9 @@
     .sidebar__menu span{
         display: none;
     }
-    
+    #dashboard-margin {
+        margin-right: 35px;
+    }
     .dash-margin{
         margin-right: 14px;
     }
