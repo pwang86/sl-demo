@@ -128,6 +128,7 @@ function displayRecordList() {
 
         const tdDetail = document.createElement("td");
         const aTag = document.createElement("a");
+        aTag.setAttribute("href", "#");
         aTag.innerHTML = "Detail";
         tdDetail.appendChild(aTag);
 
