@@ -175,19 +175,16 @@
     text-align: center;
 }
 
-.newRecord_button{
-    margin-bottom: 20px;
-}
-
 .clearfix::after {
     content: "";
     clear: both;
     display: table;
 }
+
+.table-margin {
+    margin-top: 20px;
+}
 @media all and (max-width: 425px){
-    .newRecord_button{
-        font-size: 0.8rem !important;
-    }
     .input{
         font-size: 0.8rem !important;
     }
