@@ -33,6 +33,7 @@ const jsonRecord = `
 {
     "record": [
         {
+            "id": "1",
             "model": "WR841N",
             "location": "A0C1",
             "version": "14.0",
@@ -40,6 +41,7 @@ const jsonRecord = `
             "quantity": "100"
         },
         {
+            "id": "2",
             "model": "WA850RE",
             "location": "A0C2",
             "version": "6.0",
@@ -47,6 +49,7 @@ const jsonRecord = `
             "quantity": "120"
         },
         {
+            "id": "3",
             "model": "M5 (2P)",
             "location": "A0D1",
             "version": "6.0",
@@ -54,6 +57,7 @@ const jsonRecord = `
             "quantity": "120"
         },
         {
+            "id": "4",
             "model": "VR300",
             "location": "A0D2",
             "version": "3.2",
@@ -61,6 +65,7 @@ const jsonRecord = `
             "quantity": "180"
         },
         {
+            "id": "5",
             "model": "VR1600V",
             "location": "A1C1",
             "version": "2.0",
@@ -68,6 +73,7 @@ const jsonRecord = `
             "quantity": "384"
         },
         {
+            "id": "6",
             "model": "WR841N",
             "location": "A1C2",
             "version": "14.0",
@@ -75,6 +81,7 @@ const jsonRecord = `
             "quantity": "240"
         },
         {
+            "id": "7",
             "model": "M5 (2P)",
             "location": "A1D1",
             "version": "6.0",
@@ -82,6 +89,7 @@ const jsonRecord = `
             "quantity": "240"
         },
         {
+            "id": "8",
             "model": "VR1600V",
             "location": "A1D2",
             "version": "2.0",
@@ -89,6 +97,7 @@ const jsonRecord = `
             "quantity": "384"
         },
         {
+            "id": "9",
             "model": "VR300",
             "location": "A2C1",
             "version": "3.2",
@@ -96,6 +105,7 @@ const jsonRecord = `
             "quantity": "240"
         },
         {
+            "id": "10",
             "model": "WA850RE",
             "location": "A2C2",
             "version": "6.0",
