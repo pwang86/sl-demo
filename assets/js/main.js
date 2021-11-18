@@ -138,7 +138,9 @@ function displayRecordList() {
 
         const tdDetail = document.createElement("td");
         const aTag = document.createElement("a");
-        aTag.href = window.location.href + "&id=" + item.id;
+        aTag.setAttribute("class", "link-primary")
+        aTag.setAttribute("data-bs-toggle", "modal");
+        aTag.setAttribute("data-bs-target", "#detailModal");
         aTag.innerHTML = "Detail";
         tdDetail.appendChild(aTag);
 
