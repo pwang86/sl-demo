@@ -138,9 +138,11 @@ function displayRecordList() {
 
         const tdDetail = document.createElement("td");
         const aTag = document.createElement("a");
-        aTag.setAttribute("class", "link-primary")
+        aTag.setAttribute("class", "link-primary");
+        aTag.setAttribute("href", "#");
         aTag.setAttribute("data-bs-toggle", "modal");
         aTag.setAttribute("data-bs-target", "#detailModal");
+        aTag.setAttribute("onclick", "handleDetail('" + item.id + "')");
         aTag.innerHTML = "Detail";
         tdDetail.appendChild(aTag);
 
@@ -154,6 +156,8 @@ function displayRecordList() {
         container.appendChild(trTag);
     });
 }
+
+
 
 function displayStockTaking() {
     const myMap = recordObj.record.reduce((acc, {model, quantity}) => acc.set(model, (acc.get(model) || 0) + parseInt(quantity)), new Map());
