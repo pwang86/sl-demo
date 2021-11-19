@@ -142,7 +142,7 @@ function displayRecordList() {
         aTag.setAttribute("href", "#");
         aTag.setAttribute("data-bs-toggle", "modal");
         aTag.setAttribute("data-bs-target", "#detailModal");
-        aTag.setAttribute("onclick", "handleDetail('" + item.id + "')");
+        aTag.setAttribute("onclick", "handleClickDetail('" + item.id + "')");
         aTag.innerHTML = "Detail";
         tdDetail.appendChild(aTag);
 
@@ -157,7 +157,23 @@ function displayRecordList() {
     });
 }
 
+function handleClickDetail(id) {
+    const name = document.getElementById("detailName");
+    name.value = recordObj.record[id].model;
 
+    const location = document.getElementById("detailLocation");
+    location.value = recordObj.record[id].location;
+
+    const version = document.getElementById("detailVersion");
+    version.value = recordObj.record[id].version;
+
+    const date = document.getElementById("detailDate");
+    date.value = recordObj.record[id].date;
+
+    const qty = document.getElementById("detailQty");
+    qty.value = recordObj.record[id].quantity;
+
+}
 
 function displayStockTaking() {
     const myMap = recordObj.record.reduce((acc, {model, quantity}) => acc.set(model, (acc.get(model) || 0) + parseInt(quantity)), new Map());
