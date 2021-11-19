@@ -158,21 +158,22 @@ function displayRecordList() {
 }
 
 function handleClickDetail(id) {
+    const idInArr = parseInt(id) - 1;
+    console.log(idInArr);
     const name = document.getElementById("detailName");
-    name.value = recordObj.record[id].model;
+    name.value = recordObj.record[idInArr].model;
 
     const location = document.getElementById("detailLocation");
-    location.value = recordObj.record[id].location;
+    location.value = recordObj.record[idInArr].location;
 
     const version = document.getElementById("detailVersion");
-    version.value = recordObj.record[id].version;
+    version.value = recordObj.record[idInArr].version;
 
     const date = document.getElementById("detailDate");
-    date.value = recordObj.record[id].date;
+    date.value = recordObj.record[idInArr].date;
 
     const qty = document.getElementById("detailQty");
-    qty.value = recordObj.record[id].quantity;
-
+    qty.value = recordObj.record[idInArr].quantity;
 }
 
 function displayStockTaking() {
